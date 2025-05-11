@@ -1,9 +1,10 @@
 import './style.css'
-import player, { getUpgradeTimesBought, load, resetGame, save, saveExport, saveImport, saveImportConfirm } from './data';
+import { load, resetGame, save, saveExport, saveImport, saveImportConfirm } from './data';
 import element from './dom';
-import { format } from './util';
-import { loadCosts, updateCostDisp, upgrades } from './upgrades';
+import { loadCosts } from './upgrades';
 
+load();
+loadCosts();
 
 //game loop
 setInterval(() => {

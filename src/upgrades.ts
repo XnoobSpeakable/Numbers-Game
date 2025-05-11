@@ -21,7 +21,6 @@ export const upgrades: Upgrades = {
 }
 
 export function updateCostDisp(costDiv: string, cost: number) {
-
     element(costDiv).innerHTML = `Cost: ${cost}`
 }
 
