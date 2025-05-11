@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numbers Game</title>
+    <script type="module" crossorigin src="./assets/index-6rI5KxAu.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CZJxzGqf.css">
+  </head>
+  <body>
+    <div class="centered buttonrow">
+
+      <div id="mainroll" class="bordered">
+        <div class="pad20">
+          <button id="rollbutton">Roll</button>
+          <div i="stats">You have rolled 0 times.</div>
+          <div id="range">Range: 1 - 1</div>
+          <div id="rollresult" style="font-size:larger">-</div>
+          <div id="rewards">Rewards: </div>
+        </div>
+      </div>
+      <div id="autoroll" class="bordered">
+        <div class="pad20">
+          <button id="autorollbutton">Auto Roll</button>
+          <div id="autorollstats">You have auto rolled 0 times.</div>
+          <div id="autorollrange">Range: 1 - 1</div>
+          <div id="autorollresult" style="font-size:larger">-</div>
+          <div id="rewards">Rewards: </div>
+        </div>
+      </div>
+    </div>
+    <div id="version">α0.0.4</div>
+    <div id="settings">
+      <button id="wipesave">wipesave</button>
+      <button id="export">Export Save</button>
+      <button id="import">Import Save</button>
+    </div>
+
+    <textarea id="importareaid" name="importarea" rows="4" cols="50"
+      style="display: none; text-align: left"></textarea>
+    <button id="saveimportconfirm" style="display: none">
+      Import Save
+    </button>
+  </body>
+</html>
