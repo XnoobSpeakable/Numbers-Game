@@ -6,8 +6,11 @@ const player: Player = {
     },
     maxmanual: 1,
     maxauto: 0,
+    unitary: 0,
     prime: 0,
-    composite: 0
+    composite: 0,
+    negative: 0,
+    
 };
 
 export interface Player {

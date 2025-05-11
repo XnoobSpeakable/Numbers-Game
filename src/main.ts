@@ -6,6 +6,10 @@ import { loadCosts } from './upgrades';
 load();
 loadCosts();
 
+element("rollbutton").onclick = () => {
+
+}
+
 //game loop
 setInterval(() => {
 //test
