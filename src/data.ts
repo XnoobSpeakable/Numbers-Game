@@ -11,7 +11,10 @@ const player: Player = {
 };
 
 export interface Player {
-    [key: string]: number | {[key:string]: number};
+    [key: string]: number | object;
+    upgradesBought: {
+        [key: string]: number;
+    };
 }
 
 const gameId = "numbersgame_savefile";
