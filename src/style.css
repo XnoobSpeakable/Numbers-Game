@@ -82,6 +82,12 @@ button:hover {
   right: 0;
 }
 
+#settings {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
 .absolutecentering {
   position: absolute; 
   left: 0; 
