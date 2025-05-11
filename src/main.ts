@@ -8,7 +8,7 @@ loadCosts();
 
 //game loop
 setInterval(() => {
-
+//test
 }, 100);
 
 function updateTexts() {
