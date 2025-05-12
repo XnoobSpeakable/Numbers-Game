@@ -10,14 +10,23 @@ const player: Player = {
     prime: 0,
     composite: 0,
     negative: 0,
+    rolls: 0,
+    autorolls: 0,
     
 };
 
 export interface Player {
-    [key: string]: number | object;
     upgradesBought: {
         [key: string]: number;
     };
+    maxmanual: number;
+    maxauto: number;
+    unitary: number;
+    prime: number;
+    composite: number;
+    negative: number;
+    rolls: number;
+    [key: string]: number | object;
 }
 
 const gameId = "numbersgame_savefile";

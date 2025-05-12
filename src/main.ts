@@ -1,13 +1,17 @@
 import './style.css'
-import { load, resetGame, save, saveExport, saveImport, saveImportConfirm } from './data';
+import player, { load, resetGame, save, saveExport, saveImport, saveImportConfirm } from './data';
 import element from './dom';
 import { loadCosts } from './upgrades';
+import { rewardNumber } from './numbers';
 
 load();
 loadCosts();
 
 element("rollbutton").onclick = () => {
-
+    const num = Math.ceil(Math.random() * player.maxmanual)
+    element("rollresult").textContent = num.toString();
+    rewardNumber(num, false);
+    player.rolls++;
 }
 
 //game loop
@@ -16,6 +20,7 @@ setInterval(() => {
 }, 100);
 
 function updateTexts() {
+    element("stats").textContent = `You have rolled ${player.rolls} times.`
 }
 
 function updateButtons() {
