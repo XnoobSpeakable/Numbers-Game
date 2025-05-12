@@ -9,10 +9,9 @@ const player: Player = {
     unitary: 0,
     prime: 0,
     composite: 0,
-    negative: 0,
     rolls: 0,
     autorolls: 0,
-    
+    flag: 0,
 };
 
 export interface Player {
@@ -24,8 +23,9 @@ export interface Player {
     unitary: number;
     prime: number;
     composite: number;
-    negative: number;
     rolls: number;
+    autorolls: number;
+    flag: number;
     [key: string]: number | object;
 }
 

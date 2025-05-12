@@ -7,11 +7,12 @@
   </head>
   <body>
     <script type="module" defer src="src/main.ts"></script>
+    <script type="module" defer src="src/unlocks.ts"></script>
     <div class="centered buttonrow">
       <div id="mainroll" class="bordered">
         <div class="pad20">
           <button id="rollbutton">Roll</button>
-          <div i="stats">You have rolled 0 times.</div>
+          <div id="stats">You have rolled 0 times.</div>
           <div id="range">Range: 1 - 1</div>
           <div id="rollresult" style="font-size:larger">-</div>
           <div id="rewards">Rewards: </div>
@@ -32,13 +33,13 @@
       <div class="bordered">
         <div class="pad20">
           <div id="unitarycurr">You have 0 Unitary points</div>
-          <button id="rangeup">Upgrade range to 2</button>
-          <div id="rangeupcost">Cost: 5 Unitary points</div>
+          <button id="rangetwo">Upgrade range to 2</button>
+          <div id="rangetwocost">Cost: 20 Unitary points</div>
         </div>
       </div>
     </div>
 
-    <div id="version">α0.1.0</div>
+    <div id="version">α1.0.0</div>
     <div id="settings">
       <button id="wipesave">wipesave</button>
       <button id="export">Export Save</button>

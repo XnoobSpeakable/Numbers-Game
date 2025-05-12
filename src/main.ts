@@ -20,7 +20,13 @@ setInterval(() => {
 }, 100);
 
 function updateTexts() {
+    element("range").textContent = `Range: 1 - ${player.maxmanual}`;
     element("stats").textContent = `You have rolled ${player.rolls} times.`
+    element("autorollstats").textContent = `You have auto rolled ${player.autorolls} times.`
+    element("unitarycurr").textContent = `You have ${player.unitary} Unitary Points`;
+    //element("primecurr").textContent = `You have ${player.prime} Prime Points`;
+    //element("compositecurr").textContent = `You have ${player.composite} Composite Points`;
+
 }
 
 function updateButtons() {
