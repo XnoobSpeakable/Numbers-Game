@@ -26,18 +26,18 @@ function factors(n: number): number {
 }
 
 function gainUnitary() {
-    player.unitary++;
+    player.currency.unitary++;
 }
 function gainPrime(n:number) {
-    player.prime++
+    player.currency.prime++
     //check for twin primes
     if(n > 2) {
         if(n === 3 || n === 5) {
-            player.prime++;
+            player.currency.prime++;
             return 2;
         } else {
             if(isPrime(n - 2) || isPrime(n + 2)) {
-                player.prime++;
+                player.currency.prime++;
                 return 2;
             }
         }
@@ -46,7 +46,7 @@ function gainPrime(n:number) {
 }
 function gainComposite(n: number) {
     const f = factors(n);
-    player.composite += f;
+    player.currency.composite += f;
     return f;
 }
 

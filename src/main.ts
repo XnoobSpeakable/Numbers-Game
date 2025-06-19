@@ -3,9 +3,12 @@ import player, { load, resetGame, save, saveExport, saveImport, saveImportConfir
 import element from './dom';
 import { loadCosts } from './upgrades';
 import { rewardNumber } from './numbers';
+import { updateUnlocks } from './unlocks';
 
 load();
 loadCosts();
+
+updateUnlocks();
 
 element("rollbutton").onclick = () => {
     const num = Math.ceil(Math.random() * player.maxmanual)
@@ -22,10 +25,16 @@ setInterval(() => {
 function updateTexts() {
     element("range").textContent = `Range: 1 - ${player.maxmanual}`;
     element("stats").textContent = `You have rolled ${player.rolls} times.`
+    //could probably do this better but idc
     element("autorollstats").textContent = `You have auto rolled ${player.autorolls} times.`
-    element("unitarycurr").textContent = `You have ${player.unitary} Unitary Points`;
-    //element("primecurr").textContent = `You have ${player.prime} Prime Points`;
-    //element("compositecurr").textContent = `You have ${player.composite} Composite Points`;
+    element("unitarycurr").textContent = `You have ${player.currency.unitary} Unitary Points`;
+    element("primecurr").textContent = `You have ${player.currency.prime} Prime Points`;
+    element("compositecurr").textContent = `You have ${player.currency.composite} Composite Points`;
+    element("perfectcurr").textContent = `You have ${player.currency.perfect} Perfect Points`;
+    element("repdigitcurr").textContent = `You have ${player.currency.repdigit} Repdigit Points`;
+    element("powercurr").textContent = `You have ${player.currency.power} Power Points`;
+    element("carmichaelcurr").textContent = `You have ${player.currency.carmichael} Carmichael Points`;
+    element("multicurr").textContent = `You have ${player.currency.multi} Multi Points`;
 
 }
 

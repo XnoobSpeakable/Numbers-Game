@@ -1,16 +1,38 @@
 import element from "./dom.ts";
+import { Currency } from "./upgrades.ts";
 
 const player: Player = {
     upgradesBought: {
         blank: 0,
     },
-    maxmanual: 1,
-    maxauto: 0,
-    unitary: 0,
-    prime: 0,
-    composite: 0,
+    currency: {
+        unitary: 0,
+        composite: 0,
+        prime: 0,
+        perfect: 0,
+        repdigit: 0,
+        power: 0,
+        carmichael: 0,
+    multi: 0,
+    },
+    // How many upgrades bought in each section
+    unlocks: {
+        unitary: 0,
+        prime: 0,
+        composite: 0,
+        perfect: 0,
+        repdigit: 0,
+        power: 0,
+        carmichael: 0,
+        multi: 0,
+    },
+    // Stats
     rolls: 0,
     autorolls: 0,
+    // Rolling capabilities
+    maxmanual: 1,
+    maxauto: 0,
+    // Other
     flag: 0,
 };
 
@@ -18,11 +40,14 @@ export interface Player {
     upgradesBought: {
         [key: string]: number;
     };
+    unlocks: {
+        [key in Currency]: number;
+    };
+    currency: {
+        [key in Currency]: number;
+    };
     maxmanual: number;
     maxauto: number;
-    unitary: number;
-    prime: number;
-    composite: number;
     rolls: number;
     autorolls: number;
     flag: number;

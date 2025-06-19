@@ -1,7 +1,8 @@
+//remains unused for now, might be needed later
 import player from "./data";
 import element from "./dom";
 
-export type Currency = "prime" | "composite";
+export type Currency = "unitary" | "prime" | "composite" | "perfect" | "repdigit" | "power" | "carmichael" | "multi";
 
 export interface Upgrade {
     buttonDiv: string;

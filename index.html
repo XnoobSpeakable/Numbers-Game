@@ -1,55 +1,122 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Numbers Game</title>
-  </head>
-  <body>
-    <script type="module" defer src="src/main.ts"></script>
-    <script type="module" defer src="src/unlocks.ts"></script>
-    <div class="centered buttonrow">
-      <div id="mainroll" class="bordered">
-        <div class="pad20">
-          <button id="rollbutton">Roll</button>
-          <div id="stats">You have rolled 0 times.</div>
-          <div id="range">Range: 1 - 1</div>
-          <div id="rollresult" style="font-size:larger">-</div>
-          <div id="rewards">Rewards: </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Numbers Game</title>
+    </head>
+    <body>
+        <script type="module" defer src="src/main.ts"></script>
+        <script type="module" defer src="src/unlocks.ts"></script>
+        <div class="centered max500 buttonrow">
+            <div id="mainroll" class="bordered">
+                <div class="pad20">
+                    <button id="rollbutton">Roll</button>
+                    <div id="stats">You have rolled 0 times.</div>
+                    <div id="range">Range: 1 - 1</div>
+                    <div id="rollresult" style="font-size:larger">-</div>
+                    <div id="rewards">Rewards: </div>
+                </div>
+            </div>
+            <div id="autoroll" class="bordered">
+                <div class="pad20">
+                    <button id="autorollbutton" disabled="disabled">Auto Roll</button>
+                    <div id="autorollstats">You have auto rolled 0 times.</div>
+                    <div id="autorollrange">Range: 1 - 1</div>
+                    <div id="autorollresult" style="font-size:larger">-</div>
+                    <div id="autorollrewards">Rewards: </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div id="autoroll" class="bordered">
-        <div class="pad20">
-          <button id="autorollbutton" disabled="disabled">Auto Roll</button>
-          <div id="autorollstats">You have auto rolled 0 times.</div>
-          <div id="autorollrange">Range: 1 - 1</div>
-          <div id="autorollresult" style="font-size:larger">-</div>
-          <div id="autorollrewards">Rewards: </div>
+        <br>
+        <div class="centered max1000 buttonrow">
+            <div class="bordered">
+                <div class="pad20">
+                    <div id="unitarycurr">You have 0 Unitary points</div>
+                    <button id="unitarybutton">Unlock upgrader</button>
+                    <div id="unitarycost">Cost: 20 Unitary points</div>
+                </div>
+            </div>
+            <br>
+            <div class="bordered">
+                <div class="pad20">
+                    <div id="compositecurr">You have 0 Composite points</div>
+                    <button id="compositebutton">Unlock upgrader</button>
+                    <div id="compositecost">Cost: 20 Composite points</div>
+                </div>
+            </div>
+            <br>
+            <div class="bordered">
+                <div class="pad20">
+                    <div id="primecurr">You have 0 Prime points</div>
+                    <button id="primebutton">Unlock upgrader</button>
+                    <div id="primecost">Cost: 20 Prime points</div>
+                </div>
+            </div>
+            <br>
+            <div class="bordered">
+                <div class="pad20">
+                    <div id="perfectcurr">You have 0 Perfect points</div>
+                    <button id="perfectbutton">Unlock upgrader</button>
+                    <div id="perfectcost">Cost: 20 Perfect points</div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <br>
-    <div class="centered buttonrow">
-      <div class="bordered">
-        <div class="pad20">
-          <div id="unitarycurr">You have 0 Unitary points</div>
-          <button id="rangetwo">Upgrade range to 2</button>
-          <div id="rangetwocost">Cost: 20 Unitary points</div>
+        <br>
+        <div class="centered max1000 buttonrow">
+            <div class="bordered">
+                <div class="pad20">
+                    <div id="repdigitcurr">You have 0 Repdigit points</div>
+                    <button id="repdigitbutton">Unlock upgrader</button>
+                    <div id="repdigitcost">Cost: 20 Repdigit points</div>
+                </div>
+            </div>
+            <br>
+            <div class="bordered">
+                <div class="pad20">
+                    <div id="powercurr">You have 0 Power points</div>
+                    <button id="powerbutton">Unlock upgrader</button>
+                    <div id="powercost">Cost: 20 Power points</div>
+                </div>
+            </div>
+            <br>
+            <div class="bordered">
+                <div class="pad20">
+                    <div id="carmichaelcurr">You have 0 Carmichael points</div>
+                    <button id="carmichaelbutton">Unlock upgrader</button>
+                    <div id="carmichaelcost">Cost: 20 Carmichael points</div>
+                </div>
+            </div>
+            <br>
+            <div class="bordered">
+                <div class="pad20">
+                    <div id="multicurr">You have 0 Multi points</div>
+                    <button id="multibutton">Unlock upgrader</button>
+                    <div id="multicost">Cost: 20 Multi points</div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+        <br>
+        <div class="centered max1000 buttonrow" id="upgrader" style="display: none">
+            <div class="bordered">
+                <div class="pad20">
+                    <div class="buttonrow">
+                        <button id="upgraderoll">Upgrade Roll</button>
+                        <button id="upgradeautoroll">Upgrade Autoroll</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div id="version">α1.0.0</div>
-    <div id="settings">
-      <button id="wipesave">wipesave</button>
-      <button id="export">Export Save</button>
-      <button id="import">Import Save</button>
-    </div>
+        <div id="version">α2.0.0</div>
+        <div id="settings">
+            <button id="wipesave">wipesave</button>
+            <button id="export">Export Save</button>
+            <button id="import">Import Save</button>
+        </div>
 
-    <textarea id="importareaid" name="importarea" rows="4" cols="50"
-      style="display: none; text-align: left"></textarea>
-    <button id="saveimportconfirm" style="display: none">
-      Import Save
-    </button>
-  </body>
+
+        <textarea id="importareaid" name="importarea" rows="4" cols="50" style="display: none; text-align: left"></textarea>
+        <button id="saveimportconfirm" style="display: none">Import Save</button>
+    </body>
 </html>

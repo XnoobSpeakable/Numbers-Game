@@ -50,9 +50,15 @@ button:hover {
 
 .centered {
   text-align: center; 
-  max-width: 500px;
   margin: 0 auto;
 }
+.max500 {
+  max-width: 500px;
+}
+.max1000 {
+  max-width: 1000px;
+}
+
 .pad10 {
   padding: 10px;
 }
@@ -94,12 +100,6 @@ button:hover {
   right: 0; 
   margin-inline: auto; 
   width: fit-content;
-}
-
-.floor {
-  width: 600px;
-  height: 450px;
-  background-color: #D9A090;
 }
 
 .buttonrow {
