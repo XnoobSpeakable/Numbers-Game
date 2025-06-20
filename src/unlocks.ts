@@ -58,27 +58,27 @@ export function updateUnlocks() {
     }
 }
 
-element("unitarybutton").onclick = () => {
+element("unitarybutton").addEventListener("click", () => {
     unlock("unitary");
-};
-element("primebutton").onclick = () => {
+});
+element("primebutton").addEventListener("click", () => {
     unlock("prime");
-};
-element("compositebutton").onclick = () => {
+});
+element("compositebutton").addEventListener("click", () => {
     unlock("composite");
-};
-element("perfectbutton").onclick = () => {
+});
+element("perfectbutton").addEventListener("click", () => {
     unlock("perfect");
-};
-element("repdigitbutton").onclick = () => {
+});
+element("repdigitbutton").addEventListener("click", () => {
     unlock("repdigit");
-};
-element("powerbutton").onclick = () => {
+});
+element("powerbutton").addEventListener("click", () => {
     unlock("power");
-};
-element("carmichaelbutton").onclick = () => {
+});
+element("carmichaelbutton").addEventListener("click", () => {
     unlock("carmichael");
-};
-element("multibutton").onclick = () => {
+});
+element("multibutton").addEventListener("click", () => {
     unlock("multi");
-};
+});

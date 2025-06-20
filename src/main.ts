@@ -17,12 +17,12 @@ loadCosts();
 
 updateUnlocks();
 
-element("rollbutton").onclick = () => {
+element("rollbutton").addEventListener("click", () => {
     const num = Math.ceil(Math.random() * player.maxmanual);
     element("rollresult").textContent = num.toString();
     rewardNumber(num, false);
     player.rolls++;
-};
+});
 
 //game loop
 setInterval(() => {
@@ -71,19 +71,9 @@ setInterval(() => {
 }, 100);
 
 //save loop
-setInterval(() => {
-    save();
-}, 4000);
+setInterval(save, 4000);
 
-element("wipesave").onclick = () => {
-    resetGame();
-};
-element("export").onclick = () => {
-    saveExport();
-};
-element("import").onclick = () => {
-    saveImport();
-};
-element("saveimportconfirm").onclick = () => {
-    saveImportConfirm();
-};
+element("wipesave").addEventListener("click", resetGame);
+element("export").addEventListener("click", saveExport);
+element("import").addEventListener("click", saveImport);
+element("saveimportconfirm").addEventListener("click", saveImportConfirm);

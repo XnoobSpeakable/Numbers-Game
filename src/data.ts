@@ -89,16 +89,6 @@ export function load(): void {
     if (save === null) return;
     const parsed = JSON.parse(save.startsWith("{") ? save : atob(save));
     deepMerge(player, parsed);
-    // for(const key in player) {
-    //     if(typeof player[key] === "string") {
-    //         player[key] = new ExpantaNumX(player[key]);
-    //     }
-    // }
-    // for(const key in player.upgradesBought) {
-    //     if(typeof player.upgradesBought[key] === "string") {
-    //     player.upgradesBought[key] = new ExpantaNumX(player.upgradesBought[key]);
-    //     }
-    // }
 }
 
 export function resetGame(): void {
