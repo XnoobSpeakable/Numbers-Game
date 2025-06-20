@@ -6,10 +6,10 @@ const domCache = new Map<string, HTMLElement>();
  * @throws {Error} if element with the given {@link id} doesn't exist.
  */
 export default function element<T extends HTMLElement>(id: string) {
-    const cachedEl = domCache.get(id)
+    const cachedEl = domCache.get(id);
     if (cachedEl !== undefined) return cachedEl as T;
-    const element = document.getElementById(id)
-    if (element === null) throw new Error(`Element ${id} is null.`)
-    domCache.set(id, element)
+    const element = document.getElementById(id);
+    if (element === null) throw new Error(`Element ${id} is null.`);
+    domCache.set(id, element);
     return element as T;
 }

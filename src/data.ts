@@ -3,7 +3,7 @@ import { Currency } from "./upgrades.ts";
 
 const player: Player = {
     upgradesBought: {
-        blank: 0,
+        blank: 0
     },
     currency: {
         unitary: 0,
@@ -13,7 +13,7 @@ const player: Player = {
         repdigit: 0,
         power: 0,
         carmichael: 0,
-    multi: 0,
+        multi: 0
     },
     // How many upgrades bought in each section
     unlocks: {
@@ -24,7 +24,7 @@ const player: Player = {
         repdigit: 0,
         power: 0,
         carmichael: 0,
-        multi: 0,
+        multi: 0
     },
     // Stats
     rolls: 0,
@@ -33,7 +33,7 @@ const player: Player = {
     maxmanual: 1,
     maxauto: 0,
     // Other
-    flag: 0,
+    flag: 0
 };
 
 export interface Player {
@@ -65,10 +65,7 @@ const gameId = "numbersgame_savefile";
 export function deepMerge<T extends object>(source: T, data: T): void {
     for (const key in data) {
         const value = data[key];
-        if (
-            typeof value === "object" &&
-            value !== null
-        ) {
+        if (typeof value === "object" && value !== null) {
             const newSource = source[key];
             if (!(key in source)) {
                 // @ts-expect-error I know this is fine
@@ -112,22 +109,22 @@ export function resetGame(): void {
 export async function saveExport(): Promise<void> {
     await navigator.clipboard.writeText(save());
     alert("Copied to clipboard!");
-};
+}
 
 export function saveImport(): void {
     element("importareaid").style.display = "block";
     element("saveimportconfirm").style.display = "block";
-};
+}
 
 export function saveImportConfirm(): void {
     const saveEl = element("importareaid") as HTMLInputElement;
     const savefile = saveEl.value; // really should check for an empty value here
     localStorage.setItem(gameId, savefile);
     location.reload();
-};
+}
 
 export default player;
 
 export function getUpgradeTimesBought(upgrade: string) {
-    return player.upgradesBought[upgrade]
+    return player.upgradesBought[upgrade];
 }

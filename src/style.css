@@ -1,119 +1,118 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color: rgba(0,0,0, 0.87);
-  --background-color: #CCCCCC;
-  background-color: var(--background-color);
-  --fill: #6a6a6a;
-  --fill-active: #6a6a6ab1;
-  --stroke: #777777;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.87);
+    --background-color: #cccccc;
+    background-color: var(--background-color);
+    --fill: #6a6a6a;
+    --fill-active: #6a6a6ab1;
+    --stroke: #777777;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #CEDFDF;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  color: inherit;
-  
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #cedfdf;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    color: inherit;
 }
 
 button:active {
-  background: var(--fill-active);
+    background: var(--fill-active);
 }
 button:hover {
-  border-color: #50A050;
+    border-color: #50a050;
 }
 
 :disabled {
-  cursor: not-allowed;
-  background-color: #997777;
+    cursor: not-allowed;
+    background-color: #997777;
 }
 :disabled:hover {
-  border-color: #FF0000;
+    border-color: #ff0000;
 }
 
 .flexcenter {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .bordered {
-  border: 2px solid black; 
+    border: 2px solid black;
 }
 
 .centered {
-  text-align: center; 
-  margin: 0 auto;
+    text-align: center;
+    margin: 0 auto;
 }
 .max500 {
-  max-width: 500px;
+    max-width: 500px;
 }
 .max1000 {
-  max-width: 1000px;
+    max-width: 1000px;
 }
 
 .pad10 {
-  padding: 10px;
+    padding: 10px;
 }
 .pad20 {
-  padding: 20px;
+    padding: 20px;
 }
 
 .side {
-  display: flex;
-  justify-content: left;
-  padding: 20px;
-  max-width: 600px;
-  text-align: center;
-  margin: 0 0 auto 0;
-  float:left;
+    display: flex;
+    justify-content: left;
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 0 auto 0;
+    float: left;
 }
 
 .topbiased {
-  display: flex;
-  justify-content: left;
-  align-items: flex-start;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
 }
 
 #version {
-  position: fixed;
-  bottom: 0;
-  right: 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 #settings {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
 }
 
 .absolutecentering {
-  position: absolute; 
-  left: 0; 
-  right: 0; 
-  margin-inline: auto; 
-  width: fit-content;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: fit-content;
 }
 
 .buttonrow {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: baseline;
-  width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+    width: 100%;
 }
 
 #wipesave {
-  background-color: #FF4444;
+    background-color: #ff4444;
 }
 
 .cost {
-  margin-top: 5px;
+    margin-top: 5px;
 }

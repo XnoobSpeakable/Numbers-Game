@@ -1,20 +1,20 @@
 {
-  "name": "numbers-game",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.26.0",
-    "@linthtml/linthtml": "^0.10.2",
-    "eslint": "^9.26.0",
-    "globals": "^15.15.0",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.32.1",
-    "vite": "^6.3.5"
-  }
+    "name": "numbers-game",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.26.0",
+        "@linthtml/linthtml": "^0.10.2",
+        "eslint": "^9.26.0",
+        "globals": "^15.15.0",
+        "typescript": "^5.5.3",
+        "typescript-eslint": "^8.32.1",
+        "vite": "^6.3.5"
+    }
 }

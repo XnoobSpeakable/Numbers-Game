@@ -2,7 +2,15 @@
 import player from "./data";
 import element from "./dom";
 
-export type Currency = "unitary" | "prime" | "composite" | "perfect" | "repdigit" | "power" | "carmichael" | "multi";
+export type Currency =
+    | "unitary"
+    | "prime"
+    | "composite"
+    | "perfect"
+    | "repdigit"
+    | "power"
+    | "carmichael"
+    | "multi";
 
 export interface Upgrade {
     buttonDiv: string;
@@ -11,18 +19,16 @@ export interface Upgrade {
     costFormula: () => void;
     currency: Currency;
     upgrFunction: () => void;
-    functionfirst ?: boolean;
+    functionfirst?: boolean;
 }
 
 export interface Upgrades {
     [key: string]: Upgrade;
 }
-export const upgrades: Upgrades = {
-    
-}
+export const upgrades: Upgrades = {};
 
 export function updateCostDisp(costDiv: string, cost: number) {
-    element(costDiv).innerHTML = `Cost: ${cost}`
+    element(costDiv).innerHTML = `Cost: ${cost}`;
 }
 
 //snippet from https://www.webdevtutor.net/blog/typescript-get-object-key-by-value
@@ -32,24 +38,28 @@ const getObjectKeyByValue = (obj: { [key: string]: any }, value: any) => {
 };
 
 export function buyUpgrade(upgrade: Upgrade) {
-    if(typeof player[upgrade.currency] === "number" && (player[upgrade.currency] as number) > upgrade.cost) {
+    if (
+        typeof player[upgrade.currency] === "number" &&
+        (player[upgrade.currency] as number) > upgrade.cost
+    ) {
         //subtract cost from currency
-        player[upgrade.currency] = (player[upgrade.currency] as number) - (upgrade.cost)
+        player[upgrade.currency] =
+            (player[upgrade.currency] as number) - upgrade.cost;
         //add 1 to upgrade times bought
         const upgradeKey = getObjectKeyByValue(upgrades, upgrade);
         if (upgradeKey) {
-            player.upgradesBought[upgradeKey] = player.upgradesBought[upgradeKey] + 1;
+            player.upgradesBought[upgradeKey] =
+                player.upgradesBought[upgradeKey] + 1;
         }
         //update cost, execute what the upgrade does, update displayed cost
-        if(upgrade.functionfirst) {
-            upgrade.upgrFunction()
-            upgrade.costFormula()
-
+        if (upgrade.functionfirst) {
+            upgrade.upgrFunction();
+            upgrade.costFormula();
         } else {
-            upgrade.costFormula()
-            upgrade.upgrFunction()
+            upgrade.costFormula();
+            upgrade.upgrFunction();
         }
-        updateCostDisp(upgrade.costDiv, upgrade.cost)
+        updateCostDisp(upgrade.costDiv, upgrade.cost);
     }
 }
 
@@ -57,8 +67,8 @@ export function buyUpgrade(upgrade: Upgrade) {
 export function loadCosts() {
     for (const upgrade in upgrades) {
         const upgradeObj = upgrades[upgrade];
-        upgradeObj.costFormula()
-        updateCostDisp(upgradeObj.costDiv, upgradeObj.cost)
+        upgradeObj.costFormula();
+        updateCostDisp(upgradeObj.costDiv, upgradeObj.cost);
     }
 }
 
