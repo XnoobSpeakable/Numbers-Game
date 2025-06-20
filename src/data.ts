@@ -51,7 +51,6 @@ export interface Player {
     rolls: number;
     autorolls: number;
     flag: number;
-    [key: string]: number | object;
 }
 
 const gameId = "numbersgame_savefile";
@@ -115,6 +114,6 @@ export function saveImportConfirm(): void {
 
 export default player;
 
-export function getUpgradeTimesBought(upgrade: string) {
+export function getUpgradeTimesBought(upgrade: string): number {
     return player.upgradesBought[upgrade];
 }

@@ -38,13 +38,10 @@ const getObjectKeyByValue = (obj: { [key: string]: any }, value: any) => {
 };
 
 export function buyUpgrade(upgrade: Upgrade) {
-    if (
-        typeof player[upgrade.currency] === "number" &&
-        (player[upgrade.currency] as number) > upgrade.cost
-    ) {
+    if (player.currency[upgrade.currency] > upgrade.cost) {
         //subtract cost from currency
-        player[upgrade.currency] =
-            (player[upgrade.currency] as number) - upgrade.cost;
+        player.currency[upgrade.currency] =
+            player.currency[upgrade.currency] - upgrade.cost;
         //add 1 to upgrade times bought
         const upgradeKey = getObjectKeyByValue(upgrades, upgrade);
         if (upgradeKey) {
@@ -64,7 +61,7 @@ export function buyUpgrade(upgrade: Upgrade) {
 }
 
 //load costs on game reload
-export function loadCosts() {
+export function loadCosts(): void {
     for (const upgrade in upgrades) {
         const upgradeObj = upgrades[upgrade];
         upgradeObj.costFormula();
