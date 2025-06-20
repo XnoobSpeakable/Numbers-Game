@@ -29,7 +29,7 @@ setInterval(() => {
     //test
 }, 100);
 
-function updateTexts() {
+function updateTexts(): void {
     element("range").textContent = `Range: 1 - ${player.maxmanual}`;
     element("stats").textContent = `You have rolled ${player.rolls} times.`;
     //could probably do this better but idc
@@ -62,7 +62,7 @@ function updateTexts() {
     ).textContent = `You have ${player.currency.multi} Multi Points`;
 }
 
-function updateButtons() {}
+function updateButtons(): void {}
 
 //UI update loop
 setInterval(() => {

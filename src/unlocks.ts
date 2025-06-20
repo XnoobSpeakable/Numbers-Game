@@ -40,7 +40,7 @@ type ButtonArrays = {
     [key in Currency]: string[];
 };
 
-function unlock(curr: Currency) {
+function unlock(curr: Currency): void {
     if (player.currency[curr] < costArrays[curr][player.unlocks[curr]]) return;
     player.currency[curr] -= costArrays[curr][player.unlocks[curr]];
     player.unlocks[curr]++;
@@ -52,7 +52,7 @@ function unlock(curr: Currency) {
     updateUnlocks();
 }
 
-export function updateUnlocks() {
+export function updateUnlocks(): void {
     if (player.unlocks.unitary >= 1) {
         element("upgrader").style.display = "block";
     }

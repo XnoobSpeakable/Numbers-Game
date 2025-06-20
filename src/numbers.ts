@@ -23,10 +23,10 @@ function factors(n: number): number {
     return f;
 }
 
-function gainUnitary() {
+function gainUnitary(): void {
     player.currency.unitary++;
 }
-function gainPrime(n: number) {
+function gainPrime(n: number): number {
     player.currency.prime++;
     //check for twin primes
     if (n > 2) {
@@ -40,13 +40,13 @@ function gainPrime(n: number) {
     }
     return 1;
 }
-function gainComposite(n: number) {
+function gainComposite(n: number): number {
     const f = factors(n);
     player.currency.composite += f;
     return f;
 }
 
-export function rewardNumber(n: number, isAuto: boolean) {
+export function rewardNumber(n: number, isAuto: boolean): void {
     const el = isAuto ? element("autorollrewards")! : element("rewards")!;
     let str = "Rewards:";
     if (n === 1) {
