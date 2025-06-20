@@ -1,5 +1,5 @@
 import element from "./dom.ts";
-import { Currency } from "./upgrades.ts";
+import type { Currency } from "./upgrades.ts";
 
 const player: Player = {
     upgradesBought: {

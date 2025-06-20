@@ -2,7 +2,7 @@
 
 import player from "./data";
 import element from "./dom";
-import { Currency } from "./upgrades";
+import type { Currency } from "./upgrades";
 
 //costs will be changed later
 const costArrays: CostArrays = {
