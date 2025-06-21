@@ -2,7 +2,7 @@
 
 import player from "./data";
 import element from "./dom";
-import type { Currency } from "./upgrades";
+import { currencies, type Currency } from "./upgrades";
 
 //costs will be changed later
 const costArrays: CostArrays = {
@@ -40,16 +40,26 @@ type ButtonArrays = {
     [key in Currency]: string[];
 };
 
-function unlock(curr: Currency): void {
-    if (player.currency[curr] < costArrays[curr][player.unlocks[curr]]) return;
-    player.currency[curr] -= costArrays[curr][player.unlocks[curr]];
-    player.unlocks[curr]++;
+function loadText(curr: Currency): void {
     element(`${curr}button`).textContent =
         buttonArrays[curr][player.unlocks[curr]];
     element(`${curr}cost`).textContent = `Cost: ${
         costArrays[curr][player.unlocks[curr]]
     } ${curr.charAt(0).toUpperCase() + curr.slice(1)} points`;
+}
+
+function unlock(curr: Currency): void {
+    if (player.currency[curr] < costArrays[curr][player.unlocks[curr]]) return;
+    player.currency[curr] -= costArrays[curr][player.unlocks[curr]];
+    player.unlocks[curr]++;
+    loadText(curr);
     updateUnlocks();
+}
+
+export function loadAll(): void {
+    currencies.forEach(curr => {
+        loadText(curr);
+    });
 }
 
 export function updateUnlocks(): void {

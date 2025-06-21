@@ -10,11 +10,11 @@ import player, {
 import element from "./dom";
 import { loadCosts } from "./upgrades";
 import { rewardNumber } from "./numbers";
-import { updateUnlocks } from "./unlocks";
+import { loadAll, updateUnlocks } from "./unlocks";
 
 load();
 loadCosts();
-
+loadAll();
 updateUnlocks();
 
 element("rollbutton").addEventListener("click", () => {

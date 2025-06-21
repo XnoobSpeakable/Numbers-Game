@@ -12,6 +12,17 @@ export type Currency =
     | "carmichael"
     | "multi";
 
+export const currencies: Currency[] = [
+    "unitary",
+    "prime",
+    "composite",
+    "perfect",
+    "repdigit",
+    "power",
+    "carmichael",
+    "multi",
+];
+
 export interface Upgrade {
     buttonDiv: string;
     costDiv: string;
